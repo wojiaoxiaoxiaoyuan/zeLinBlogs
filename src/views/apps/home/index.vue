@@ -3,15 +3,22 @@
 </template>
 
 <script>
+import api from 'shared/api/test'
 export default {
-  name: 'home'
+  name: 'home',
+
+  mounted () {
+    let params = {
+      method: api.test,
+      test: 'qwerq',
+      asdf: [1, 2, 3]
+    }
+    this.axios.post(params).then(res => {
+      console.log(res.data)
+    })
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
-  .home
-    width 100%
-    height 100%
-    background url('/static/image/home/background.jpg') no-repeat left top
-    background-size 100%
 </style>
