@@ -16,9 +16,8 @@ axios.interceptors.request.use(req => {
     delete req.url.method
     req.data = qs.stringify(req.url, {arrayFormat: 'repeat'})
   }
-  console.log(url)
-  req.url = `${API_SERVER.default}/${url}`
   console.log(req)
+  req.url = `${API_SERVER.default}/${url}`
   return req
 }), err => {
   return Promise.reject(err)
@@ -26,7 +25,6 @@ axios.interceptors.request.use(req => {
 
 // 响应拦截器
 axios.interceptors.response.use(res => {
-  // console.log(res)
   return res
 }), err => {
   return Promise.reject(err)

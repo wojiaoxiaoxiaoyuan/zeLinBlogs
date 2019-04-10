@@ -13,8 +13,8 @@ export default {
       test: 'qwerq',
       asdf: [1, 2, 3]
     }
-    this.axios.post(params).then(res => {
-      console.log(res.data)
+    this.axios.get(params).then(res => {
+      console.log(res)
     })
   }
 }
