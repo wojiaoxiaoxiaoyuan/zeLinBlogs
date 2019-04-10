@@ -1,7 +1,7 @@
 module.exports = {
-  // 测试服务器
+  // 开发服务器
   api: {
-    host: '182.61.180.157',
+    host: 'localhost',
     port: '8080',
     protocol: 'http'
   }

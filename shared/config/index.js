@@ -6,14 +6,17 @@
 let apiServer = {}
 
 switch (process.env.API_SERVER) {
-  case 'prod':
-    apiServer = require('./prod')
+  case 'dev':
+    apiServer = require('./dev')
     break
   case 'test':
     apiServer = require('./test')
     break
+  case 'prod':
+    apiServer = require('./prod')
+    break
   default:
-    apiServer = require('./test')
+    apiServer = require('./dev')
 }
 
 export const API_SERVER = {
