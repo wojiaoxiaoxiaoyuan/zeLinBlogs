@@ -16,7 +16,6 @@ axios.interceptors.request.use(req => {
     delete req.url.method
     req.data = qs.stringify(req.url, {arrayFormat: 'repeat'})
   }
-  console.log(req)
   req.url = `${API_SERVER.default}/${url}`
   return req
 }), err => {

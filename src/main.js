@@ -16,7 +16,7 @@ import 'shared/styles/base.styl'
 Vue.use(Element)
 Vue.prototype.axios = axios
 
-// 屏蔽开发环境console.log
+// 屏蔽开发环境
 if (process.env.NODE_ENV === 'production') {
   console.log = () => {}
 }
