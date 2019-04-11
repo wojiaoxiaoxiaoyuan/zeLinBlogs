@@ -22,6 +22,7 @@
 
 <script>
 import { username, password } from 'shared/utils/validators'
+import api from 'shared/api/login'
 export default {
   name: 'register',
 
@@ -65,7 +66,17 @@ export default {
     submitForm () {
       this.$refs.rules.validate((valid) => {
         if (valid) {
-          alert('submit!')
+          let params = {
+            method: api.register,
+            userName: this.form.userName,
+            passWorld: this.form.passWorld,
+            key: this.form.key
+          }
+          this.axios.post(params).then(res => {
+            if (res.data.status === 200) {
+              this.$parent.index = 1
+            }
+          })
         } else {
           console.log('error submit!!')
           return false

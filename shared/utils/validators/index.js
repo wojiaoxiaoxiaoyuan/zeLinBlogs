@@ -11,7 +11,7 @@ export const username = function (rule, value, callback) {
 }
 
 export const password = function (rule, value, callback) {
-  if (!/^(?=.*[0-9].*)(?=.*[a-zA-Z].*)[0-9A-Za-z]{8,16}$/.test(value)) { // 后台验证规则
+  if (!/^(?=.*[0-9].*)(?=.*[a-zA-Z].*).{8,16}$/.test(value)) { // 后台验证规则
     callback(new Error('请输入8-16位密码(必须包含数字与字母)'))
   } else {
     callback()
